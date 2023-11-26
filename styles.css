@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-bg-color: #1d2d44;
+    --main-text-color: #f0ebd8;
+    --secondary-color: #748cab;
+    font-family: 'Limelight', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+h1{
+    text-align: center;
+}
+
+.rando{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.randBtn{
+    margin-bottom: 10px;
+}
+
+.rand_display{
+    border: 1px solid whitesmoke;
+    background-color: var(--main-text-color);
+    height: 25px;
+    width: 200px;
+}
+
+.movie_input{
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+input{
+    margin-right: 10px;
+}
