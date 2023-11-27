@@ -1,5 +1,13 @@
-const randBtn = document.querySelector('.randBtn')
+const helpBtn = document.querySelector('.helpBtn')
+const closeBtn = document.querySelector('.closeBtn')
+const dialog = document.querySelector('dialog')
 
-randBtn.addEventListener('click', () => {
-    alert('clicked')
+
+helpBtn.addEventListener('click', () => {
+    dialog.showModal()
+    //dialog.classList.add('.show')
+})
+
+closeBtn.addEventListener('click', () =>{
+    dialog.close()
 })

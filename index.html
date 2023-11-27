@@ -14,16 +14,21 @@
         </div>
         <div class="rando">
             <button class="randBtn">Decide for me</button>
-            <div class="rand_display"></div>
+            <button class="helpBtn">Help Me Decide</button>
         </div>
-        <div class="movie_input">
-            <label for="movie1">Movie 1</label>
-            <input type="text" id="movie1">
-            <label for="movie2">Movie 2</label>
-            <input type="text" id="movie2">
-            <label for="movie3">Movie 3</label>
-            <input type="text" id="movie3">
-        </div>
+        <dialog>
+            <p>Enter the 3 movies you want to pick from</p>
+            <form action="">
+                    <label for="movie_1">Movie 1</label>
+                    <input type="text" id="movie_1">
+                    <label for="movie_2">Movie 2</label>
+                    <input type="text" id="movie_2">
+                    <label for="movie_3">Movie 3</label>
+                    <input type="text" id="movie_3">
+                </form>
+                <button class="submitBtn">Submit</button>
+                <button class="closeBtn">Close</button>
+        </dialog>
     </div>
 </body>
 </html>
