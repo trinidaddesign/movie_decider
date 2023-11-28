@@ -8,7 +8,9 @@ const thanksBtn = document.querySelector('.thanks')
 const tryAgain = document.querySelector('.choose_again')
 
 const randArray = [
-    'The Thing', 'Prince Of Darkness', 'Into The Mouth Of Madness'
+    'The Thing', 'Prince Of Darkness', 'Into The Mouth Of Madness',
+    'The Stuff', 'Nightmare On elm Street', ' The Void', 'Halloween 3',
+    'Re-Animator', 'An American Werewolf In london'
 ]
 
 chooseBtn.addEventListener('click', ()=> {
