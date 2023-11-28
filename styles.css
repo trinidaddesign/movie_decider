@@ -45,8 +45,8 @@ h1{
     flex-direction: column;
 }
 
-.randBtn,
-.helpBtn{
+.decide_button,
+.help_button{
     width: 200px;
     margin: 10px;
 }
@@ -58,9 +58,48 @@ h1{
     width: 200px;
 }
 
-form{
-    height: 50vh;
-    display: flex;
+#form_div{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-bg-color);
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
     text-wrap: balance;
+}
+
+#form_div.show{
+    display: flex;
+}
+
+
+#movie_display{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-bg-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#movie_display.show{
+    display: flex;
+    
+}
+
+#movie_display button{
+    margin: 5px;
+    width: 100px;
 }

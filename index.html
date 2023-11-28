@@ -13,11 +13,11 @@
             <H1>MOVIE DECIDER</H1>
         </div>
         <div class="rando">
-            <button class="randBtn">Decide for me</button>
-            <button class="helpBtn">Help Me Decide</button>
+            <button class="decide_button">Decide for me</button>
+            <button class="help_button">Help Me Decide</button>
         </div>
-        <dialog>
-            <p>Enter the 3 movies you want to pick from</p>
+        <div id="form_div">
+            <p>Enter the 3 movies to pick from</p>
             <form action="">
                     <label for="movie_1">Movie 1</label>
                     <input type="text" id="movie_1">
@@ -28,7 +28,12 @@
                 </form>
                 <button class="submitBtn">Submit</button>
                 <button class="closeBtn">Close</button>
-        </dialog>
+            </div>
+        <div id="movie_display">
+            <div movie-result-display></div>
+                <button class="thanks">Thanks!</button>
+                <button class="choose_again">Choose Again</button>
+        </div>
     </div>
 </body>
 </html>
