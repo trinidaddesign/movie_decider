@@ -1,10 +1,12 @@
-const chooseBtn = document.querySelector('.decide_button')
+const chooseBtn = document.querySelector('.random_movie_button')
 const helpBtn = document.querySelector('.help_button')
-const closeBtn = document.querySelector('.close_button')
+const libraryBtn = document.querySelector('.library_button')
+const libraryElm = document.querySelector('#library_div')
+const libraryCloseBtn = document.querySelector('.library_close_button')
 const formElm = document.querySelector('#form_div')
-const movieDis = document.querySelector('#movie_display')
-const randomMovieText = document.querySelector('[random-movie-result-display]')
+const movieDis = document.querySelector('#movie_div')
 const pickThreeText = document.querySelector('[form-choose-three-text]')
+const formCloseBtn = document.querySelector('.form_close_button')
 const thanksBtn = document.querySelector('.thanks')
 const tryAgain = document.querySelector('.choose_again')
 const submitBtn = document.querySelector('.submit_button')
@@ -17,9 +19,8 @@ const randArray = [
     'Re-Animator', 'An American Werewolf In london'
 ]
 
-
-
 function pickAtRandom() {
+    const randomMovieText = document.querySelector('[random-movie-result-display]')
     const randomIndex = Math.floor(Math.random() * randArray.length)
     const answer = randArray[randomIndex]
     console.log(answer)
@@ -27,14 +28,13 @@ function pickAtRandom() {
 }
 
 function pickAgain() {
+    const randomMovieText = document.querySelector('[random-movie-result-display]')
     randomMovieText.innerText = ''
     const randomIndex = Math.floor(Math.random() * randArray.length)
     const answer = randArray[randomIndex]
     console.log(answer)
     randomMovieText.innerText = answer
 }
-
-
 
 function helpMeDecide(){
     const movieOneVal = document.querySelector('#movie_1').value
@@ -82,8 +82,17 @@ submitBtn.addEventListener('click', () => {
     //formElm.classList.remove('show')
 })
 
-closeBtn.addEventListener('click', () =>{
+formCloseBtn.addEventListener('click', () =>{
     formElm.classList.remove('show')
     form.reset()
     pickThreeText.innerText = ''
+})
+
+//library
+libraryBtn.addEventListener('click', () => {
+    libraryElm.classList.add('show')
+})
+
+libraryCloseBtn.addEventListener('click', () => {
+    libraryElm.classList.remove('show')
 })

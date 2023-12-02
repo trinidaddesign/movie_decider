@@ -29,17 +29,16 @@ body{
 h1{
     text-align: center;
     text-shadow: 
-    0 0 7px whitesmoke,
-    0 0 10px whitesmoke,
-    0 0 21px var(--third-color),
-    0 0 42px var(--third-color),
-    0 0 82px var(--third-color),
+    0 0 4px whitesmoke,
+    0 0 8px whitesmoke,
+    0 0 16px var(--third-color),
+    0 0 32px var(--third-color),
+    0 0 64px var(--third-color),
     0 0 102px var(--third-color),
-    0 0 151px var(--third-color);
+    0 0 150px var(--third-color);
     letter-spacing: 2px;
     margin-bottom: 50px;
 }
-
 
 .home_display{
     height: 100px;
@@ -49,7 +48,7 @@ h1{
     flex-direction: column;
 }
 
-.decide_button,
+.random_movie_button,
 .help_button,
 .library_button{
     width: 200px;
@@ -72,7 +71,6 @@ button:hover{
     transform: scale(1.2);
 }
 
-
 #form_div{
     display: none;
     position: fixed;
@@ -94,7 +92,7 @@ button:hover{
 }
 
 
-#movie_display{
+#movie_div{
     display: none;
     position: fixed;
     top: 0;
@@ -109,12 +107,45 @@ button:hover{
     text-align: center;
 }
 
-#movie_display.show{
+#movie_div.show{
     display: flex;
     
 }
 
-#movie_display button{
+#movie_div button{
     margin: 5px;
     width: 100px;
+}
+
+
+#library_div{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-bg-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
+    text-wrap: balance;
+}
+
+#library_div.show{
+    display: flex;
+}
+
+table {
+	border-collapse: separate;
+	letter-spacing: 1px;
+}
+
+td,
+th {
+	padding: 10px;
+    border: 1px solid var(--main-text-color);
+	text-align: center;
 }
