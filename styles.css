@@ -48,10 +48,8 @@ h1{
     flex-direction: column;
 }
 
-.random_movie_button,
-.help_button,
-.library_button{
-    width: 200px;
+button{
+    width: 125px;
     margin: 20px;
     box-shadow:    
     0 0 1px whitesmoke,
