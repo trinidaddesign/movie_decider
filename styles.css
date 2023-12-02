@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
 
 *{
     margin: 0;
@@ -10,7 +12,8 @@
     --main-bg-color: #1d2d44;
     --main-text-color: #f0ebd8;
     --secondary-color: #748cab;
-    font-family: 'Limelight', sans-serif;
+    --third-color: hotpink;
+    font-family: 'Tilt Neon', sans-serif;
 }
 
 body{
@@ -28,16 +31,17 @@ h1{
     text-shadow: 
     0 0 7px whitesmoke,
     0 0 10px whitesmoke,
-    0 0 21px var(--secondary-color),
-    0 0 42px var(--secondary-color),
-    0 0 82px var(--secondary-color),
-    0 0 102px var(--secondary-color),
-    0 0 151px var(--secondary-color);
+    0 0 21px var(--third-color),
+    0 0 42px var(--third-color),
+    0 0 82px var(--third-color),
+    0 0 102px var(--third-color),
+    0 0 151px var(--third-color);
     letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 
-.rando{
+.home_display{
     height: 100px;
     display: flex;
     justify-content: center;
@@ -46,17 +50,12 @@ h1{
 }
 
 .decide_button,
-.help_button{
+.help_button,
+.library_button{
     width: 200px;
     margin: 10px;
 }
 
-.rand_display{
-    border: 1px solid whitesmoke;
-    background-color: var(--main-text-color);
-    height: 25px;
-    width: 200px;
-}
 
 #form_div{
     display: none;
