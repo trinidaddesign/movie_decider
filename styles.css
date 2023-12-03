@@ -162,6 +162,7 @@ dialog {
 }
 ::backdrop{
     background-color: var(--main-bg-color);
+    opacity: 1;
 }
 
 .modal_form{
