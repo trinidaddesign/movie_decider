@@ -1,28 +1,39 @@
+//home buttons
 const chooseBtn = document.querySelector('.random_movie_button')
 const helpBtn = document.querySelector('.help_button')
 const libraryBtn = document.querySelector('.library_button')
-const libraryElm = document.querySelector('#library_div')
-const libraryCloseBtn = document.querySelector('.library_close_button')
-const formElm = document.querySelector('#form_div')
+//random movie screen
 const movieDis = document.querySelector('#movie_div')
-const pickThreeText = document.querySelector('[form-choose-three-text]')
-const formCloseBtn = document.querySelector('.form_close_button')
 const thanksBtn = document.querySelector('.thanks')
 const tryAgain = document.querySelector('.choose_again')
-const submitBtn = document.querySelector('.submit_button')
+//form screen
 const form = document.querySelector('form')
+const formElm = document.querySelector('#form_div')
+const pickThreeText = document.querySelector('[form-choose-three-text]')
+const submitBtn = document.querySelector('.submit_button')
+const formCloseBtn = document.querySelector('.form_close_button')
+//library screen
+const libraryElm = document.querySelector('#library_div')
+const libraryCloseBtn = document.querySelector('.library_close_button')
+const addMovieBtn = document.querySelector('.add_movie')
+const tbody = document.querySelector('.tbody')
+//Dialog modal
+const dialog = document.querySelector('dialog')
+const subMovieBtn = document.querySelector('.submit_movie')
+const closeDialogBtn = document.querySelector('.close_dialog')
 
 
-const randArray = [
+const libraryArray = [
     'The Thing', 'Prince Of Darkness', 'Into The Mouth Of Madness',
     'The Stuff', 'Nightmare On elm Street', ' The Void', 'Halloween 3',
     'Re-Animator', 'An American Werewolf In london'
+
 ]
 
 function pickAtRandom() {
     const randomMovieText = document.querySelector('[random-movie-result-display]')
-    const randomIndex = Math.floor(Math.random() * randArray.length)
-    const answer = randArray[randomIndex]
+    const randomIndex = Math.floor(Math.random() * libraryArray.length)
+    const answer = libraryArray[randomIndex]
     console.log(answer)
     randomMovieText.innerText = answer
 }
@@ -30,8 +41,8 @@ function pickAtRandom() {
 function pickAgain() {
     const randomMovieText = document.querySelector('[random-movie-result-display]')
     randomMovieText.innerText = ''
-    const randomIndex = Math.floor(Math.random() * randArray.length)
-    const answer = randArray[randomIndex]
+    const randomIndex = Math.floor(Math.random() * libraryArray.length)
+    const answer = libraryArray[randomIndex]
     console.log(answer)
     randomMovieText.innerText = answer
 }
@@ -51,12 +62,23 @@ function helpMeDecide(){
     return pickThreeText.innerText = answer
 }
 
+/*class Movie {
+    constructor(title, director, runtTime) {
+        this.title = title
+        this.director = director
+        this.runTime = runTime
+    }
+
+    addMovie(){
+        let title = 
+    }
+}*/
 
 
 //event listeners
 
 //for the decide for me section
-//opens the div and displays rando movie
+//opens the div and displays random movie
 chooseBtn.addEventListener('click', ()=> {
     movieDis.classList.add('show')
     //picks from array of stored movies and displays it
@@ -95,4 +117,13 @@ libraryBtn.addEventListener('click', () => {
 
 libraryCloseBtn.addEventListener('click', () => {
     libraryElm.classList.remove('show')
+})
+
+//library modal
+addMovieBtn.addEventListener('click', () => {
+    dialog.showModal()
+})
+
+closeDialogBtn.addEventListener('click', ()=> {
+    dialog.close()
 })

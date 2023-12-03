@@ -149,3 +149,23 @@ th {
     border: 1px solid var(--main-text-color);
 	text-align: center;
 }
+
+dialog {
+	height: 300px;
+	width: 300px;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: none;
+}
+::backdrop{
+    background-color: var(--main-bg-color);
+}
+
+.modal_form{
+    display: flex;
+    flex-direction: column;
+}
+

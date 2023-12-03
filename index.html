@@ -17,6 +17,11 @@
             <button class="help_button">Help Me Decide</button>
             <button class="library_button">Go To Library</button>
         </div>
+        <div id="movie_div">
+            <div random-movie-result-display></div>
+                <button class="thanks">Thanks!</button>
+                <button class="choose_again">Choose Again</button>
+        </div>
         <div id="form_div">
             <p>Enter the 3 movies to pick from</p>
             <form action="">
@@ -31,11 +36,6 @@
                 <button class="form_close_button">Close</button>
                 <div form-choose-three-text></div>
             </div>
-        <div id="movie_div">
-            <div random-movie-result-display></div>
-                <button class="thanks">Thanks!</button>
-                <button class="choose_again">Choose Again</button>
-        </div>
         <div id="library_div">
             <div class="libray_table">
                 <table>
@@ -50,9 +50,23 @@
                         <td>Ridley Scott</td>
                         <td>1hr 57min</td>
                     </tr>
+                    <tbody class="tbody"></tbody>
                 </table>
             </div>
+            <button class="add_movie">Add Movie</button>
             <button class="library_close_button">close</button>
+            <dialog>
+                <form class="modal_form">
+                <label for="title">Title</label>
+                <input type="text" id="title">
+                <label for="director">Director</label>
+                <input type="text" id="director">
+                <label for="run_time">Run Time</label>
+                <input type="text" id="run_time">
+                </form>
+                <button class="submit_movie">Submit</button>
+                <button class="close_dialog">Close</button>
+            </dialog>
         </div>
     </div>
 </body>
