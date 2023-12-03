@@ -21,12 +21,15 @@ const tbody = document.querySelector('.tbody')
 const dialog = document.querySelector('dialog')
 const subMovieBtn = document.querySelector('.submit_movie')
 const closeDialogBtn = document.querySelector('.close_dialog')
+const libTitle = document.querySelector('#library_title').value
+const libDirect = document.querySelector('#library_director').value
+const libRunTime = document.querySelector('#run_time').value
 
 
 const libraryArray = [
-    'The Thing', 'Prince Of Darkness', 'Into The Mouth Of Madness',
+    /*'The Thing', 'Prince Of Darkness', 'Into The Mouth Of Madness',
     'The Stuff', 'Nightmare On elm Street', ' The Void', 'Halloween 3',
-    'Re-Animator', 'An American Werewolf In london'
+    'Re-Animator', 'An American Werewolf In london'*/
 
 ]
 
@@ -62,17 +65,42 @@ function helpMeDecide(){
     return pickThreeText.innerText = answer
 }
 
-/*class Movie {
-    constructor(title, director, runtTime) {
+class Movie {
+    constructor(title, director, runTime) {
         this.title = title
         this.director = director
         this.runTime = runTime
     }
 
     addMovie(){
-        let title = 
+        let title = libTitle
+        let director = libDirect
+        let runTime = libRunTime
+
+        let newMovie = new Movie(title, director, runTime)
+        libraryArray.push(newMovie)
+        return console.log(libraryArray)
     }
-}*/
+
+    displayMovie(){
+        tbody.innerHTML = ''
+        libraryArray.forEach((movie) => {
+            const lastMovie = libraryArray[libraryArray.length - 1]
+
+            const movieHtml = 
+            `
+            <tr>
+            <td scope="row">${Movie.title}</td>
+            <td>${Movie.director}</td>
+            <td>${Movie.runTime}</td>
+            </tr>
+            `
+            if(movie === lastMovie){
+                tbody.insertAdjacentHTML("beforebegin",movieHtml)
+            }//closes if
+        })//closes for each
+    }//closes displayMovie
+}
 
 
 //event listeners
@@ -125,5 +153,12 @@ addMovieBtn.addEventListener('click', () => {
 })
 
 closeDialogBtn.addEventListener('click', ()=> {
+    dialog.close()
+})
+
+subMovieBtn.addEventListener('click', () => {
+    const newMovie = new Movie(libTitle, libDirect,libRunTime)
+    newMovie.addMovie()
+    newMovie.displayMovie()
     dialog.close()
 })
