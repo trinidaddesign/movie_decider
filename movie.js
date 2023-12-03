@@ -19,24 +19,21 @@ const addMovieBtn = document.querySelector('.add_movie')
 const tbody = document.querySelector('.tbody')
 //Dialog modal
 const dialog = document.querySelector('dialog')
+const dialogForm = document.querySelector('.modal_form')
 const subMovieBtn = document.querySelector('.submit_movie')
 const closeDialogBtn = document.querySelector('.close_dialog')
-const libTitle = document.querySelector('#library_title').value
-const libDirect = document.querySelector('#library_director').value
-const libRunTime = document.querySelector('#run_time').value
+const libTitle = document.querySelector('#library_title')
+const libDirect = document.querySelector('#library_director')
+const libRunTime = document.querySelector('#run_time')
 
 
-const libraryArray = [
-    /*'The Thing', 'Prince Of Darkness', 'Into The Mouth Of Madness',
-    'The Stuff', 'Nightmare On elm Street', ' The Void', 'Halloween 3',
-    'Re-Animator', 'An American Werewolf In london'*/
-
-]
+const libraryArray = []
+const randLibArray = []
 
 function pickAtRandom() {
     const randomMovieText = document.querySelector('[random-movie-result-display]')
-    const randomIndex = Math.floor(Math.random() * libraryArray.length)
-    const answer = libraryArray[randomIndex]
+    const randomIndex = Math.floor(Math.random() * randLibArray.length)
+    const answer = randLibArray[randomIndex]
     console.log(answer)
     randomMovieText.innerText = answer
 }
@@ -44,8 +41,8 @@ function pickAtRandom() {
 function pickAgain() {
     const randomMovieText = document.querySelector('[random-movie-result-display]')
     randomMovieText.innerText = ''
-    const randomIndex = Math.floor(Math.random() * libraryArray.length)
-    const answer = libraryArray[randomIndex]
+    const randomIndex = Math.floor(Math.random() * randLibArray.length)
+    const answer = randLibArray[randomIndex]
     console.log(answer)
     randomMovieText.innerText = answer
 }
@@ -71,18 +68,15 @@ class Movie {
         this.director = director
         this.runTime = runTime
     }
+}
 
-    addMovie(){
-        let title = libTitle
-        let director = libDirect
-        let runTime = libRunTime
+function addMovie(x, y, z){
+    let newMovie = new Movie(x, y, z)
+    libraryArray.push(newMovie)
+    randLibArray.push(newMovie.title)
+}
 
-        let newMovie = new Movie(title, director, runTime)
-        libraryArray.push(newMovie)
-        return console.log(libraryArray)
-    }
-
-    displayMovie(){
+function displayMovie(){
         tbody.innerHTML = ''
         libraryArray.forEach((movie) => {
             const lastMovie = libraryArray[libraryArray.length - 1]
@@ -90,17 +84,17 @@ class Movie {
             const movieHtml = 
             `
             <tr>
-            <td scope="row">${Movie.title}</td>
-            <td>${Movie.director}</td>
-            <td>${Movie.runTime}</td>
+            <td scope="row">${movie.title}</td>
+            <td>${movie.director}</td>
+            <td>${movie.runTime}</td>
             </tr>
             `
-            if(movie === lastMovie){
-                tbody.insertAdjacentHTML("beforebegin",movieHtml)
-            }//closes if
-        })//closes for each
-    }//closes displayMovie
-}
+        if(movie === lastMovie){
+            tbody.insertAdjacentHTML("beforebegin",movieHtml)
+        }//closes if
+    })//closes for each
+}//closes displayMovie
+
 
 
 //event listeners
@@ -157,8 +151,8 @@ closeDialogBtn.addEventListener('click', ()=> {
 })
 
 subMovieBtn.addEventListener('click', () => {
-    const newMovie = new Movie(libTitle, libDirect,libRunTime)
-    newMovie.addMovie()
-    newMovie.displayMovie()
+    addMovie(libTitle.value,libDirect.value,libRunTime.value)
+    displayMovie()
     dialog.close()
+    dialogForm.reset()
 })
