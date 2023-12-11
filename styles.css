@@ -40,7 +40,7 @@ body{
     
 }
 
-p{
+#header{
     text-align: center;
     font-size: 45px;
     letter-spacing: 2px;
