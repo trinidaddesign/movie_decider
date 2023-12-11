@@ -6,6 +6,7 @@ const libraryBtn = document.querySelector('.library_button')
 const movieDis = document.querySelector('#movie_div')
 const thanksBtn = document.querySelector('.thanks')
 const tryAgain = document.querySelector('.choose_again')
+const movieDisplayDiv = document.querySelector('#movie-display')
 //help me decide screen
 const form = document.querySelector('form')
 const formElm = document.querySelector('#form_div')
@@ -105,6 +106,8 @@ chooseBtn.addEventListener('click', ()=> {
     movieDis.classList.add('show')
     //picks from array of stored movies and displays it
     pickAtRandom()
+    movieDisplayDiv.classList.add('show')
+
 })
 
 thanksBtn.addEventListener('click', () => {

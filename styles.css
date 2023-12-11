@@ -26,10 +26,27 @@ body{
     align-items: center;
 }
 
-h1{
+
+
+@keyframes mymove {
+    60% {
+        text-shadow:   
+        0 0 1px whitesmoke,
+        0 0 2cap whitesmoke,
+        0 0 4px var(--third-color),
+        0 0 8px var(--third-color),
+        0 0 16px var(--third-color),
+        0 0 32px var(--third-color),
+        0 0 64px var(--third-color);; ;
+    }
+    
+}
+
+p{
     text-align: center;
+    font-size: 45px;
     letter-spacing: 2px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     animation: mymove 2s infinite;
 }
 
@@ -42,9 +59,9 @@ h1{
 }
 
 button{
-    font-size: larger;
+    font-size: x-large;
+    margin: 10px;
     width: fit-content;
-    margin: 20px;
     text-shadow:    
     0 0 1px whitesmoke,
     0 0 2cap whitesmoke,
@@ -56,13 +73,48 @@ button{
     border: none;
     background: none;
     color: whitesmoke;
-    border-radius: 5px;
+}
+
+.home_display button{
+    margin: 20px;
+    
 }
 
 .random_movie_button:hover,
 .help_button:hover,
 .library_button:hover{
     transform: scale(1.2);
+}
+
+#movie_div{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-bg-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#movie_div.show{
+    display: flex;
+    
+}
+
+#movie-display.show{
+    font-size: xx-large;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    padding: 10px;
+    animation: mymove 3s infinite;
 }
 
 #form_div{
@@ -92,49 +144,8 @@ button{
     animation: mymove 3s infinite;
 }
 
-@keyframes mymove {
-    60% {
-        text-shadow:   
-        0 0 1px whitesmoke,
-        0 0 2cap whitesmoke,
-        0 0 4px var(--third-color),
-        0 0 8px var(--third-color),
-        0 0 16px var(--third-color),
-        0 0 32px var(--third-color),
-        0 0 64px var(--third-color);; ;
-    }
-    
-}
-
-
 #form_div.show{
     display: flex;
-}
-
-
-#movie_div{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--main-bg-color);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    text-align: center;
-}
-
-#movie_div.show{
-    display: flex;
-    
-}
-
-#movie_div button{
-    margin: 5px;
-    width: 100px;
 }
 
 
@@ -161,6 +172,7 @@ button{
 table {
 	border-collapse: separate;
 	letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
 td,
@@ -180,6 +192,7 @@ dialog {
     color: var(--main-text-color);
     border: none;
 }
+
 ::backdrop{
     background-color: #1d2d44;
     opacity: 1;
