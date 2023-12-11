@@ -28,16 +28,9 @@ body{
 
 h1{
     text-align: center;
-    text-shadow: 
-    0 0 4px whitesmoke,
-    0 0 8px whitesmoke,
-    0 0 16px var(--third-color),
-    0 0 32px var(--third-color),
-    0 0 64px var(--third-color),
-    0 0 102px var(--third-color),
-    0 0 150px var(--third-color);
     letter-spacing: 2px;
     margin-bottom: 50px;
+    animation: mymove 2s infinite;
 }
 
 .home_display{
@@ -49,9 +42,10 @@ h1{
 }
 
 button{
-    width: 125px;
+    font-size: larger;
+    width: fit-content;
     margin: 20px;
-    box-shadow:    
+    text-shadow:    
     0 0 1px whitesmoke,
     0 0 2cap whitesmoke,
     0 0 4px var(--third-color),
@@ -86,6 +80,32 @@ button{
     text-align: center;
     text-wrap: balance;
 }
+
+#form-display.show{
+    font-size: xx-large;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    padding: 10px;
+    animation: mymove 3s infinite;
+}
+
+@keyframes mymove {
+    60% {
+        text-shadow:   
+        0 0 1px whitesmoke,
+        0 0 2cap whitesmoke,
+        0 0 4px var(--third-color),
+        0 0 8px var(--third-color),
+        0 0 16px var(--third-color),
+        0 0 32px var(--third-color),
+        0 0 64px var(--third-color);; ;
+    }
+    
+}
+
 
 #form_div.show{
     display: flex;
@@ -161,7 +181,7 @@ dialog {
     border: none;
 }
 ::backdrop{
-    background-color: var(--main-bg-color);
+    background-color: #1d2d44;
     opacity: 1;
 }
 

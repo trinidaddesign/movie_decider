@@ -6,12 +6,13 @@ const libraryBtn = document.querySelector('.library_button')
 const movieDis = document.querySelector('#movie_div')
 const thanksBtn = document.querySelector('.thanks')
 const tryAgain = document.querySelector('.choose_again')
-//form screen
+//help me decide screen
 const form = document.querySelector('form')
 const formElm = document.querySelector('#form_div')
 const pickThreeText = document.querySelector('[form-choose-three-text]')
 const submitBtn = document.querySelector('.submit_button')
 const formCloseBtn = document.querySelector('.form_close_button')
+const formDisplayDiv = document.querySelector('#form-display')
 //library screen
 const libraryElm = document.querySelector('#library_div')
 const libraryCloseBtn = document.querySelector('.library_close_button')
@@ -62,12 +63,10 @@ function helpMeDecide(){
     return pickThreeText.innerText = answer
 }
 
-class Movie {
-    constructor(title, director, runTime) {
+function Movie(title, director, runTime) {
         this.title = title
         this.director = director
         this.runTime = runTime
-    }
 }
 
 function addMovie(x, y, z){
@@ -100,6 +99,7 @@ function displayMovie(){
 //event listeners
 
 //for the decide for me section
+
 //opens the div and displays random movie
 chooseBtn.addEventListener('click', ()=> {
     movieDis.classList.add('show')
@@ -116,6 +116,7 @@ tryAgain.addEventListener('click', () => {
 })
 
 //help me decide section
+
 //opens the div
 helpBtn.addEventListener('click', () => {
     formElm.classList.add('show')
@@ -123,16 +124,19 @@ helpBtn.addEventListener('click', () => {
 //takes 3 movies and returns a choice
 submitBtn.addEventListener('click', () => {
     helpMeDecide()
-    //formElm.classList.remove('show')
+    formDisplayDiv.classList.add('show')
+    
 })
 
 formCloseBtn.addEventListener('click', () =>{
     formElm.classList.remove('show')
+    formDisplayDiv.classList.remove('show')
     form.reset()
     pickThreeText.innerText = ''
 })
 
-//library
+//library section
+
 libraryBtn.addEventListener('click', () => {
     libraryElm.classList.add('show')
 })
@@ -156,3 +160,4 @@ subMovieBtn.addEventListener('click', () => {
     dialog.close()
     dialogForm.reset()
 })
+
