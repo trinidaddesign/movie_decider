@@ -26,8 +26,6 @@ body{
     align-items: center;
 }
 
-
-
 @keyframes mymove {
     60% {
         text-shadow:   
@@ -46,7 +44,7 @@ p{
     text-align: center;
     font-size: 45px;
     letter-spacing: 2px;
-    margin-bottom: 60px;
+    margin-bottom: 125px;
     animation: mymove 2s infinite;
 }
 
@@ -111,7 +109,7 @@ button{
     height: fit-content;
     width: fit-content;
     position: absolute;
-    top: 25%;
+    top: 30%;
     text-align: center;
     padding: 10px;
     animation: mymove 3s infinite;
