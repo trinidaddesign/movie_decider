@@ -86,10 +86,9 @@ function displayMovie(){
             const movieHtml = 
             `
             <tr>
-            <td scope="row">${movie.title}</td>
+            <td onClick="deleteWarning(this)" scope="row">${movie.title}</td>
             <td>${movie.director}</td>
             <td>${movie.runTime}</td>
-            <td><button id="delete_button" onClick="deleteWarning(this)">Delete</button></td>
             </tr>
             `
         if(movie === lastMovie){

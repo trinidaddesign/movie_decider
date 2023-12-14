@@ -178,7 +178,7 @@ button{
 table {
 	border-collapse: separate;
 	letter-spacing: 1px;
-    
+    width: 100vw;
 }
 
 td,
