@@ -87,8 +87,8 @@ function displayMovie(){
             `
             <tr>
             <td onClick="deleteWarning(this)" scope="row">${movie.title}</td>
-            <td>${movie.director}</td>
-            <td>${movie.runTime}</td>
+            <td onClick="deleteWarning(this)">${movie.director}</td>
+            <td onClick="deleteWarning(this)">${movie.runTime}</td>
             </tr>
             `
         if(movie === lastMovie){
