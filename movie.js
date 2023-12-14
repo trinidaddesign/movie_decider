@@ -70,32 +70,32 @@ function Movie(title, director, runTime) {
         this.title = title
         this.director = director
         this.runTime = runTime
+        this.displayMovie = function() {
+                tbody.innerHTML = ''
+                libraryArray.forEach((movie) => {
+                    const lastMovie = libraryArray[libraryArray.length - 1]
+        
+                    const movieHtml = 
+                    `
+                    <tr>
+                    <td onClick="deleteWarning(this)" scope="row">${movie.title}</td>
+                    <td onClick="deleteWarning(this)">${movie.director}</td>
+                    <td onClick="deleteWarning(this)">${movie.runTime}</td>
+                    </tr>
+                    `
+                if(movie === lastMovie){
+                    tbody.insertAdjacentHTML("beforebegin",movieHtml)
+                }//closes if
+            })//closes for each
+        }
 }
 
-function addMovie(x, y, z){
-    let newMovie = new Movie(x, y, z)
-    libraryArray.push(newMovie)
-    randLibArray.push(newMovie.title)
+function addMovie(x){
+    libraryArray.push(x)
+    randLibArray.push(x.title)
 }
 
-function displayMovie(){
-        tbody.innerHTML = ''
-        libraryArray.forEach((movie) => {
-            const lastMovie = libraryArray[libraryArray.length - 1]
 
-            const movieHtml = 
-            `
-            <tr>
-            <td onClick="deleteWarning(this)" scope="row">${movie.title}</td>
-            <td onClick="deleteWarning(this)">${movie.director}</td>
-            <td onClick="deleteWarning(this)">${movie.runTime}</td>
-            </tr>
-            `
-        if(movie === lastMovie){
-            tbody.insertAdjacentHTML("beforebegin",movieHtml)
-        }//closes if
-    })//closes for each
-}//closes displayMovie
 
 function removeMovie(movie){
     const i = movie.parentNode.parentNode
@@ -171,8 +171,9 @@ closeDialogBtn.addEventListener('click', ()=> {
 })
 
 subMovieBtn.addEventListener('click', () => {
-    addMovie(libTitle.value,libDirect.value,libRunTime.value)
-    displayMovie()
+    let newMovie = new Movie(libTitle.value,libDirect.value,libRunTime.value)
+    addMovie(newMovie)
+    newMovie.displayMovie()
     dialog.close()
     dialogForm.reset()
 })
