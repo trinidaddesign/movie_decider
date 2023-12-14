@@ -35,7 +35,7 @@ body{
         0 0 8px var(--third-color),
         0 0 16px var(--third-color),
         0 0 32px var(--third-color),
-        0 0 64px var(--third-color);; ;
+        0 0 64px var(--third-color);
     }
     
 }
@@ -44,7 +44,7 @@ body{
     text-align: center;
     font-size: 45px;
     letter-spacing: 2px;
-    margin-bottom: 125px;
+    padding-bottom: 125px;
     animation: mymove 2s infinite;
 }
 
@@ -55,11 +55,25 @@ body{
     align-items: center;
     flex-direction: column;
 }
+.home_display button{
+    margin: 20px;
+}
+
+#delete_button{
+    color: var(--main-text-color);
+    font-size: 1em;
+}
 
 button{
     font-size: x-large;
     margin: 10px;
     width: fit-content;
+    border: none;
+    background: none;
+    color: whitesmoke;
+}
+
+#glow{
     text-shadow:    
     0 0 1px whitesmoke,
     0 0 2cap whitesmoke,
@@ -68,14 +82,6 @@ button{
     0 0 16px var(--third-color),
     0 0 32px var(--third-color),
     0 0 64px var(--third-color);
-    border: none;
-    background: none;
-    color: whitesmoke;
-}
-
-.home_display button{
-    margin: 20px;
-    
 }
 
 .random_movie_button:hover,
@@ -163,6 +169,8 @@ button{
     text-wrap: balance;
 }
 
+
+
 #library_div.show{
     display: flex;
 }
@@ -170,7 +178,7 @@ button{
 table {
 	border-collapse: separate;
 	letter-spacing: 1px;
-    margin-bottom: 20px;
+    
 }
 
 td,

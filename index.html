@@ -13,14 +13,14 @@
             <p id="header">MOVIE TRACKER</p>
         </div>
         <div class="home_display">
-            <button class="random_movie_button">Decide for Me</button>
-            <button class="help_button">Help Me Decide</button>
-            <button class="library_button">Go To Library</button>
+            <button id="glow" class="random_movie_button">Decide for Me</button>
+            <button id="glow" class="help_button">Help Me Decide</button>
+            <button id="glow" class="library_button">Go To Library</button>
         </div>
         <div id="movie_div">
             <div id="movie-display" random-movie-result-display></div>
-                <button class="thanks">Thanks!</button>
-                <button class="choose_again">Choose Again</button>
+                <button id="glow" class="thanks">Thanks!</button>
+                <button id="glow" class="choose_again">Choose Again</button>
         </div>
         <div id="form_div">
             <div id="form-display" form-choose-three-text></div>
@@ -33,29 +33,31 @@
                     <label for="movie_3">Movie 3</label>
                     <input type="text" id="movie_3">
                 </form>
-                <button class="submit_button">Submit</button>
-                <button class="form_close_button">Close</button>
+                <button id="glow" class="submit_button">Submit</button>
+                <button id="glow" class="form_close_button">Close</button>
                 
             </div>
         <div id="library_div">
             <div class="libray_table">
+                <button id="glow" class="add_movie">Add Movie</button>
+                <button id="glow" class="library_close_button">Close</button>
                 <table>
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Director</th>
                         <th scope="col">Run Time</th>
-                        
+                        <th scope="col">Delete</th>
                     </tr>
                     <tr>
                         <td scope="row">Alien</td>
                         <td>Ridley Scott</td>
                         <td>1hr 57min</td>
+                        <td><button id="delete_button">Delete</button></td>
                     </tr>
                     <tbody class="tbody"></tbody>
                 </table>
             </div>
-            <button class="add_movie">Add Movie</button>
-            <button class="library_close_button">Close</button>
+            
             <dialog>
                 <form class="modal_form">
                 <label for="library_title">Title</label>
@@ -65,8 +67,8 @@
                 <label for="run_time">Run Time</label>
                 <input type="text" id="run_time">
                 </form>
-                <button class="submit_movie">Submit</button>
-                <button class="close_dialog">Close</button>
+                <button id="glow" class="submit_movie">Submit</button>
+                <button id="glow" class="close_dialog">Close</button>
             </dialog>
         </div>
     </div>

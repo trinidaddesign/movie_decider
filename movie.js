@@ -19,6 +19,7 @@ const libraryElm = document.querySelector('#library_div')
 const libraryCloseBtn = document.querySelector('.library_close_button')
 const addMovieBtn = document.querySelector('.add_movie')
 const tbody = document.querySelector('.tbody')
+const x = document.querySelector('#delete_button')
 //Dialog modal
 const dialog = document.querySelector('dialog')
 const dialogForm = document.querySelector('.modal_form')
@@ -31,6 +32,7 @@ const libRunTime = document.querySelector('#run_time')
 
 const libraryArray = []
 const randLibArray = []
+
 
 function pickAtRandom() {
     const randomMovieText = document.querySelector('[random-movie-result-display]')
@@ -87,6 +89,7 @@ function displayMovie(){
             <td scope="row">${movie.title}</td>
             <td>${movie.director}</td>
             <td>${movie.runTime}</td>
+            <td><button id="delete_button" onClick="deleteWarning(this)">Delete</button></td>
             </tr>
             `
         if(movie === lastMovie){
@@ -95,6 +98,16 @@ function displayMovie(){
     })//closes for each
 }//closes displayMovie
 
+function removeMovie(movie){
+    const i = movie.parentNode.parentNode
+    i.parentNode.removeChild(i)
+}
+
+function deleteWarning(x){
+    if(confirm('Are you sure you want to delete this movie?')){
+        removeMovie(x)
+    }
+}
 
 
 //event listeners
@@ -147,6 +160,7 @@ libraryBtn.addEventListener('click', () => {
 libraryCloseBtn.addEventListener('click', () => {
     libraryElm.classList.remove('show')
 })
+
 
 //library modal
 addMovieBtn.addEventListener('click', () => {
